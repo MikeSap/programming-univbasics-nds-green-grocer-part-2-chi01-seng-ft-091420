@@ -5,7 +5,7 @@ def apply_coupons(cart, coupons)
       #binding.pry
       item_w_coupon = find_item_by_name_in_collection(disc[:item], cart)
            if  !!item_w_coupon && coupon[:num] <=  item_w_coupon[:count]
-             cart["#{:item} W/ COUPON"] = disc
+             final_item = {:item => 'item_w_coupon[:item] W/ COUPON'
         coupon[:cost] = [:cost] / [:num]
     end
   end
