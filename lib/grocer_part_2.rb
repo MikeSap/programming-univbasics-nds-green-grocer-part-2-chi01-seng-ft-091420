@@ -16,7 +16,7 @@ end
 def apply_clearance(cart)
   cart.each do |food|
     if !!food[:clearance]
-      food[:price] = food[:price] * .8
+      food[:price] = food[:price] * 0.8
     binding.pry
     end
   end
