@@ -23,11 +23,13 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
+  total = 0
   food = consolidate_cart(cart)
   apply_coupons(food, coupons)
   apply_clearance(food)
+  food.each do |items| 
   binding.pry
-  
+end
   # Consult README for inputs and outputs
   #
   # This method should call
