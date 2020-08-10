@@ -1,9 +1,14 @@
 require_relative './part_1_solution.rb'
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+    coupons.each do |disc|
+      #binding.pry
+           if find_item_by_name_in_collection(disc[:item], cart) == disc
+             #&& disc[num] % cart[count] == 0
+             cart["#{:item} W/ COUPON"] = disc
+        disc[:cost] = disc[:cost] / disc[:num]
+    end
+  end
 end
 
 def apply_clearance(cart)
