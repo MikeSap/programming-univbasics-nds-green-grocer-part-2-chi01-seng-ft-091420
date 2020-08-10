@@ -25,9 +25,10 @@ end
 def checkout(cart, coupons)
   total = 0
   food = consolidate_cart(cart)
-  food = apply_coupons(food, coupons)
-  food = apply_clearance(food)
+  apply_coupons(food, coupons)
+  apply_clearance(food)
   food.each do |items|
     total = total + (food[:price] * food[:count])
+    binding.pry
   end
 end
