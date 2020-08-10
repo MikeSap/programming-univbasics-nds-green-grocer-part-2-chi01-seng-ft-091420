@@ -24,15 +24,16 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  total = 0
+  total = 0.0
   food = consolidate_cart(cart)
   apply_coupons(food, coupons)
   apply_clearance(food)
   food.each do |items|
     items[:total] = items[:price] * items[:count]
+      total = total + items[:total]
   end
   food.each do |items|
-  total = total + items[:total]
+
   binding.pry
   end
 end
