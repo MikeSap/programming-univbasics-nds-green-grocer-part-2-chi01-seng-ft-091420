@@ -16,8 +16,8 @@ end
 def apply_clearance(cart)
   cart.each do |food|
     if !!food[:clearance]
-      food[:price] = food[:price] * 0.8
-      food[:price] = food[:price].round(2)
+      food[:price].round(2) = food[:price] * 0.8
+      #food[:price] = food[:price].round(2)
     end
   end
   cart
@@ -32,6 +32,9 @@ def checkout(cart, coupons)
     items[:total] = items[:price] * items[:count]
       total = total + items[:total]
   #binding.pry
+  end
+  if total >= 100.0
+    total.round(2) = total * 0.9
   end
   total
 end
