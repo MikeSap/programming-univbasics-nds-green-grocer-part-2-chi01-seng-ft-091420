@@ -3,10 +3,9 @@ require_relative './part_1_solution.rb'
 def apply_coupons(cart, coupons)
     coupons.each do |coupon|
       #binding.pry
-           if find_item_by_name_in_collection(disc[:item], cart)
-             #&& disc[num] % cart[count] == 0
+           if find_item_by_name_in_collection(disc[:item], cart) && coupon[:num] % cart[:count] == 0
              cart["#{:item} W/ COUPON"] = disc
-        disc[:cost] = disc[:cost] / disc[:num]
+        coupon[:cost] = disc[:cost] / disc[:num]
     end
   end
 end
