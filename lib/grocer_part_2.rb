@@ -29,7 +29,7 @@ def checkout(cart, coupons)
   apply_clearance(food)
   food.each do |items|
     binding.pry
-    total = total + (food[:price] * food[:count])
+    total = total + (items[:price] * items[:count])
     
   end
 end
