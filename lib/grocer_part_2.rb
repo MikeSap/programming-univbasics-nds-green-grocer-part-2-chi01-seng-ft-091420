@@ -15,7 +15,10 @@ end
 
 def apply_clearance(cart)
   cart.each do |food|
+    if !!food[:clearance]
+      
     binding.pry
+    end
   end
   # Consult README for inputs and outputs
   #
