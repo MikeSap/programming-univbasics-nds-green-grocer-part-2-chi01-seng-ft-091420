@@ -17,12 +17,10 @@ def apply_clearance(cart)
   cart.each do |food|
     if !!food[:clearance]
       food[:price] = food[:price] * 0.8
-    binding.pry
+    #binding.pry
     end
   end
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  cart
 end
 
 def checkout(cart, coupons)
