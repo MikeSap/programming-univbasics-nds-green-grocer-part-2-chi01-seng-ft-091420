@@ -17,14 +17,16 @@ def apply_clearance(cart)
   cart.each do |food|
     if !!food[:clearance]
       food[:price] = food[:price] * 0.8
-    #binding.pry
     end
   end
   cart
 end
 
 def checkout(cart, coupons)
-  food = consolidate_cart (cart)
+  food = consolidate_cart(cart)
+  apply_coupons(food, coupons)
+  apply_clearance(food)
+  binding.pry
   
   # Consult README for inputs and outputs
   #
